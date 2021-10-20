@@ -10,6 +10,6 @@ FROM node:14
 	# stage 2
 
 	FROM nginx:alpine
-	COPY --from=my-app-build /dist/angular12-dojo /usr/share/nginx/html
-	COPY --from=my-app-build /nginx.conf /etc/nginx/conf.d/default.conf
+	COPY --from=my-app-build /app/dist/angular12-dojo /usr/share/nginx/html
+	COPY --from=my-app-build /app/nginx.conf /etc/nginx/conf.d/default.conf
 	EXPOSE 80
