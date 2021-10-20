@@ -15,7 +15,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  push-to-systest-acr:
+  push-to-acr:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
