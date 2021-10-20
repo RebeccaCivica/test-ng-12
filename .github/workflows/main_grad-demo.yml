@@ -24,7 +24,8 @@ jobs:
       - name: npm install, build, and test
         run: |
           npm install
-          npm run build --if-present
+          npm run build --prod --if-present
+        working-directory: .
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
@@ -52,4 +53,4 @@ jobs:
           app-name: 'grad-demo'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C29EFB40E8DA4D07992090E25C364401 }}
-          package: .
+          package: ./dist/angular12-dojo
