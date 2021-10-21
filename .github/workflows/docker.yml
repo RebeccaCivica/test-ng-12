@@ -31,7 +31,7 @@ jobs:
       with:
         login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
         username: ${{ secrets.AZURE_CLIENT_ID }}
-        password: ${{ secrets.AZURE_CLIENT_SECRET }}
+        password: ${{ secrets.AZURE_CLIENT_SECRET_2 }}
             
     - name: Build Docker Image
       run: docker build -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/${{ env.IMAGE_NAME_FULL }}:${{ env.IMAGE_TAG }} --build-arg BUILDENV=${{env.ENV_NAME}} .      
