@@ -31,7 +31,6 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'grad-demo'
-          slot-name: 'Production'
+          app-name: 'rebeccawebapp'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_43EEC98290F844A1AB514DFA7BDA3EB8 }}
           package: ./dist/angular12-dojo
