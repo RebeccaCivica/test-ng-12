@@ -38,10 +38,3 @@ jobs:
         
     - name: Push the image to ACR
       run: docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/${{ env.IMAGE_NAME_FULL }}:${{ env.IMAGE_TAG }}
-
-    - name: Invoke deployment hook
-      uses: distributhor/workflow-webhook@v1
-      env:
-        webhook_type: 'json-extended'
-        webhook_url: ${{ secrets.WEBHOOK_URL }}
-        webhook_secret: ${{ secrets.WEBHOOK_SECRET }} 
